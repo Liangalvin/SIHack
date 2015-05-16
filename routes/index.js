@@ -20,16 +20,12 @@ var text = JSON.parse(data);
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
-  // console.log(client);
-  client.stream('statuses/filter', {track: '#nygiants'}, function(stream) {
-  stream.on('data', function(tweet) {
-    console.log(tweet);
+  var msg;
+
+  client.get('search/tweets', {q: '#NYGiants'}, function(error, tweets, response){
+      console.log(tweets.statuses);
   });
 
-  stream.on('error', function(error) {
-    throw error;
-  });
-});
 
   res.render('../views/index.ejs', { msg: 'Express'});
 });
