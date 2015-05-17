@@ -6,7 +6,11 @@
   <body>
     <h1><%= msg %></h1>
 
-  
+    <form action='/find' method='post'>
+      Look for City: <input type="text" name="cityName" placeholder="City"></input>
+      Look for Team: <input type="text" name="teamName" placeholder="Team"></input>
+      <input type="submit" value="Find team"></input>
+    </form>
 
   </body>
 
